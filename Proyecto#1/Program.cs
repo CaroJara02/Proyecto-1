@@ -15,6 +15,15 @@ while (true)
     Console.WriteLine($"Mi selección fue: {opponentChoice}");
 
     DecideWinner(opponentChoice, yourChoice);
+
+    Console.WriteLine("Quieres jugar de nuevo?");
+    Console.WriteLine("Introduce SI para jugar de nuevoo cualquier otra tecla para detener...");
+
+    var playAgain = Console.ReadLine();
+    if (playAgain?.ToLower() == "si")
+        continue;
+    else
+        break;
 }
 
 string SelectChoice()
@@ -46,7 +55,7 @@ void DecideWinner(char opponentChoise, char yourChoice)
 {
     if (opponentChoise == yourChoice)
     {
-        Console.Write("Empate!");
+        Console.WriteLine("Empate!");
         return;
     }
 
